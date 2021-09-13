@@ -1,0 +1,84 @@
+<apex:page id="TWUCustomLoginPage" showHeader="false" showChat="false" sidebar="false" standardStylesheets="false" controller="TWUCustomLoginController">
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Trintity Western University Applicant Portal</title>
+  <link rel="shortcut icon" href="https://www.twu.ca/profiles/twu/themes/twu/favicon.ico" />
+  <script src="https://use.fontawesome.com/a54b7a5712.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript">
+        function noenter(e){
+            if (window.event) {
+                key = window.event.keyCode; //IE
+            } else {
+                key = e.which; //firefox
+            }
+            if (key == 13) {
+                var ele = document.getElementById('login-submit');
+                ele.click();
+                return false;
+            } else {
+                return true;
+            }
+        }
+    </script>
+  </head>
+  <body>
+  <div id="page-container">
+    <div class="header"> <a class="logo" href="hhtp://www.twu.ca"> <img src="images/trinity-logo-text.svg" alt="TWU logo" title="TWU logo" data-constrained="true"/> </a>
+      <div class="header-right"> </div>
+    </div>
+    <div id="body">
+      <div class="container">
+        <h1 class="slds-text-heading--small slds-truncate" html-aria-label="Login">Login</h1>
+        <p class="heading-para">Welcome to the Trinity Western University Applicant Portal, please log in to continue.</p>
+        <h3>NEW USER? <a href="#">Register here.</a></h3>
+        <apex:form id="loginForm" forceSSL="true" styleClass="form-signin" onkeypress="return noenter(event);">
+          <apex:pageMessages showDetail="false" id="error"/>
+          <div class="formBox">
+            <label class="slds-form-element__label" for="TWUCustomLoginPage:loginForm:login-email">Email (Username):</label>
+            <div class="form-label-group">
+              <input type="text" id="login-email" Class="form-control un" placeholder="Email"/>
+            </div>
+            <label class="slds-form-element__label" for="loginPage:j_id0:loginForm:password">Password:</label>
+            <div class="form-label-group">
+              <input type="password" id="login-password" Class="form-control pw" placeholder="Password"/>
+            </div>
+            <div class="form-btn-group">
+              <input type="button" Class="btn" value="Login">
+            </div>
+          </div>
+          <div class="para-text">If you are an agent or are a student working with an agent, please contact TWU Global (<a href="mailto:Study@twu.ca">Study@twu.ca</a>) for assistance with your application.</div>
+          <div class="helptext"> <a href="./ERx_Forms__Portal_ForgotPassword">Forgot Your Password?</a> <a href="https://www.twu.ca/help">Need Help?</a>
+            </h3>
+            <div class="formBox divider">
+              <h4>Current student or alumni?</h4>
+              <a class="btn" href="{!ssoUrl}">Login with @mytwu.ca account</a> </div>
+          </div>
+        </apex:form>
+      </div>
+    </div>
+  </div>
+  <div id="footer">
+    <div class="logoSocial">
+      <p> <a href="https://www.twu.ca"> <img alt="Trinity Western University Logo" title="Trinity Western University - Inspiring Hearts &amp;amp; Minds" class="media-element file-default" data-delta="1" src="images/trinity-logo.svg" /></a></p>
+    </div>
+    <div class="address">
+      <div class="social">
+      <a href="https://www.facebook.com/trinitywestern/" target="_blank"><i class="fa fa-facebook"></i></a>
+      <a href="https://www.instagram.com/trinitywestern/" target="_blank"><i class="fa fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/school/trinity-western-university/" target="_blank"><i class="fa fa-linkedin"></i></a>
+      <a href="https://twitter.com/TrinityWestern" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://www.youtube.com/user/TrinityWesternU" target="_blank"><i class="fa fa-youtube-play"></i></a>
+      </div>
+      <p>22500 University Drive, Langley BC V2Y 1Y1</p>
+      <p>&copy; 2021 Trinity Western University. All rights reserved.</p>
+    </div>
+  </div>
+  </div>
+  </body>
+  <script
+        src="https://code.jquery.com/jquery-3.5.0.slim.min.js"
+        integrity="sha256-MlusDLJIP1GRgLrOflUQtshyP0TwT/RHXsI1wWGnQhs="
+        crossorigin="anonymous">
+    </script>
+</apex:page>
